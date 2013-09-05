@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  $(function($) {
+    $("#text").live('input', function() {
+      var text = $("#text").attr("value")
+      if(text[text.length-1] == " "){
+        $.ajax({
+          type: 'GET',
+          dataType: 'script',
+          url: '/home/get_words',
+          data: 'word=' + this.value,
+          beforeSuccess: $('#loading').css({ display: "inline"}),
+          complete: function(data){
+            $('#predicted_words').html(data.responseText);
+            $('#loading').css({ display: "none"});
+          }
+
+        })
+        return false;
+      }
+    });
+  });
+</script>
+
+<div id="text_box">
+  <%= form_tag do %>
+    <%= text_field_tag :text %>
+  <% end %>
+</div>
+<div id="loading" style="display: none">Loading...</div>
+<div id="predicted_words">
+</div>

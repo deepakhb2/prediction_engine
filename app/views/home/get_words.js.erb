@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  function add_word(word){
+    sentence = $('#text').attr('value');
+    arr_sentence = sentence.split(" ");
+    arr_sentence[arr_sentence.length-1] = word;
+    new_sentence = arr_sentence.join(" ");
+    $('#text').attr('value', new_sentence);
+  }
+</script>
+<% unless @words.blank? %>
+<%@words.each do |word| %>
+<span onclick="add_word('<%=word%>')"><%=word%></span><br/>
+<%end%>
+<% else %>
+No words!
+<% end %>
