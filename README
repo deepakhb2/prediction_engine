@@ -1,1 +1,9 @@
-This application is developed using Rails. Its simple app which will predict the next word according to previous data.
+This application is developed using Rails. Its simple app which will predict the next word according to previous input data.
+
+Data should be loading running rake task with parameter as file path containing text in it.
+
+ex: rake read_file:get_words["/file_path"]
+
+Data read from file will be stored in database accordingly and also keep tracks about number times a word as occured becide a perticular word.
+
+The application will predict the next most occured word depending on input.
