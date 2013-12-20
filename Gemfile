@@ -1,14 +1,13 @@
   source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '4.0.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '0.2.13'
-gem 'rake', '0.9.2.2'
-gem 'jquery-rails', '1.0.4'
-gem 'ruby-debug'
+gem 'mysql2'
+gem 'rake'
+gem 'jquery-rails'
 gem 'meta_search'
 
 # Use unicorn as the web server
